@@ -121,15 +121,22 @@ def run_demo():
     robot = Robot(robot_name)
     print(f"Robot : {robot_name} is starting..")
 
+    # Timing
+
     while not rospy.is_shutdown():
-        # Write here your strategy..
+        # Strategy
         velocity = 2
         angle = 0
+        distance = float(robot.getDistanceToFlag())
+        print(f"{robot_name} distance to flag = ", distance)
+
+        # Write here your strategy..
         
 
 
         
-        # Finishing by publishing the desired speed. DO NOT TOUCH.
+        # Finishing by publishing the desired speed. 
+        # DO NOT TOUCH.
         robot.set_speed_angle(velocity, angle)
         rospy.sleep(0.5)
 
