@@ -114,16 +114,16 @@ class Robot:
         except rospy.ServiceException as e:
             print("Service call failed: %s" % e)
 
-# s
+
 def run_demo():
     """Main loop"""
     robot_name = rospy.get_param("~robot_name")
     robot = Robot(robot_name)
     print(f"Robot : {robot_name} is starting..")
     rospy.sleep(5*int(robot_name[-1]))
-    if int(robot_name[-1])==1:
-        velocity = 2
-        angle = 0
+    #if int(robot_name[-1])==1:
+    velocity = 1
+    angle = 1
 
     # Timing
 
@@ -137,26 +137,25 @@ def run_demo():
         err_dist = (distancex**2+distancey**2)**0.5
         #print(robot.getDistanceToFlag())
 
-        #desired_theta = math.atan2(distancey, distancex)
+        desired_theta = math.atan2(distancey, distancex)
         
         # Error in heading
-       # err_theta = desired_theta - robot.yaw
-        print(f"{robot_name} distance to flag = ", err_dist)
+        err_theta = desired_theta - robot.yaw
+        print(f"{robot_name} distance to flag = ", err_dist,err_theta)
 
         # Handle wrap-around issues (e.g., if error jumps from +pi to -pi)
-        # while err_theta > math.pi:
-        #     err_theta -= 2.0 * math.pi
-        # while err_theta < -math.pi:
-        #     err_theta += 2.0 * math.pi
+        while err_theta > math.pi:
+            err_theta -= 2.0 * math.pi
+        while err_theta < -math.pi:
+            err_theta += 2.0 * math.pi
 
         Kp_dist = 0.4
-        # Kp_theta = 2
+        Kp_theta = 2
 
         # Write here your strategy..
-        if int(robot_name[-1])==1:
-            velocity = Kp_dist*err_dist
-
-        # angle =    Kp_theta*err_theta    
+        # if int(robot_name[-1])==1:
+        velocity = Kp_dist*err_dist
+        angle =    Kp_theta*err_theta    
         
         # Finishing by publishing the desired speed. 
         # DO NOT TOUCH.
