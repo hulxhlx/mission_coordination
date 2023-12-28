@@ -5,6 +5,8 @@ DistanceToFlagPlugin::DistanceToFlagPlugin() : _distribution(0, 0.05) {}
 
 DistanceToFlagPlugin::~DistanceToFlagPlugin() {
   _flags_poses.clear();
+  _obs_poses.clear();
+
   _nh->shutdown();
   delete _nh;
 }
@@ -18,11 +20,20 @@ void DistanceToFlagPlugin::Load(physics::WorldPtr world, sdf::ElementPtr sdf) {
     ignition::math::Pose3d model_pose =
         world->ModelByName("flag_" + std::to_string(i))
             ->WorldPose(); // pose of flag with id i
+
     geometry_msgs::Pose2D flag_pose;
     flag_pose.x = model_pose.Pos().X();
     flag_pose.y = model_pose.Pos().Y();
     _flags_poses.push_back(flag_pose);
   }
+
+  ignition::math::Pose3d obsm_pose =
+      world->ModelByName("unit_box")->WorldPose();
+  geometry_msgs::Pose2D obs_pose;
+  obs_pose.x = obsm_pose.Pos().X();
+  obs_pose.y = obsm_pose.Pos().Y();
+
+  _obs_poses.push_back(obs_pose);
 
   _nh = new ros::NodeHandle();
   _dtf_service = _nh->advertiseService(
@@ -43,7 +54,15 @@ bool DistanceToFlagPlugin::distanceToFlag(
 
   res.distancex = dx;
   res.distancey = dy;
-  // res.distance = std::sqrt(dx*dx + dy*dy);
+
+  float dxo = _obs_poses[0].x -
+              req.agent_pose.x; // difference of coordinates between the robot
+                                // and the specified flag along the x axis
+  float dyo = _obs_poses[0].x -
+              req.agent_pose.x; // difference of coordinates between the robot
+                                // and the specified flag along the x axis
+
+  res.distanceo = std::sqrt(dxo * dxo + dyo * dyo);
   return true;
 }
 

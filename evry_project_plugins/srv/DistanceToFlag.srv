@@ -3,4 +3,5 @@ int64 id_flag
 ---
 float64 distancex
 float64 distancey
+float64 distanceo
 

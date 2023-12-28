@@ -2,7 +2,7 @@
   <world name='default'>
     <gui fullscreen='0'>
       <camera name='main_cam'>
-        <pose>-1.5625 -24.8562 5.65419 0 0.125711 1.22945</pose>
+        <pose>8.96298 -86.0633 43.7844 0 0.489711 1.45745</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1082,25 +1082,25 @@
       <pose>-21.2132 -21.2132 0 0 -0 0.785398</pose>
     </model>
     <state world_name='default'>
-      <sim_time>262 29000000</sim_time>
-      <real_time>198 909395270</real_time>
-      <wall_time>1703798676 154068326</wall_time>
-      <iterations>156293</iterations>
+      <sim_time>319 299000000</sim_time>
+      <real_time>70 99374086</real_time>
+      <wall_time>1703804416 267322525</wall_time>
+      <iterations>57270</iterations>
       <model name='flag_1'>
-        <pose>-31.2132 21.2132 0 0 -0 0</pose>
+        <pose>-21.2132 21.2132 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='flag'>
-          <pose>-31.2132 21.2132 0 0 -0 0</pose>
+          <pose>-21.2132 21.2132 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='flag_2'>
-        <pose>0 21.2132 0 0 -0 0</pose>
+        <pose>21.2132 21.2132 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='flag'>
-          <pose>0 21.2132 0 0 -0 0</pose>
+          <pose>21.2132 21.2132 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1165,30 +1165,30 @@
         </link>
       </model>
       <model name='robot_2'>
-        <pose>-21.2132 -21.2132 -0 0 -0 0.785398</pose>
+        <pose>21.0014 21.174 -0 0 -0 1.46672</pose>
         <scale>1 1 1</scale>
         <link name='base_footprint'>
-          <pose>-21.2132 -21.2132 -0 0 -0 0.785398</pose>
-          <velocity>0 -0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 3e-06 0 -0 0</wrench>
+          <pose>21.0014 21.174 -0 0 -0 1.46672</pose>
+          <velocity>-0.063602 0.213601 0 0 0 -0.998753</velocity>
+          <acceleration>1.29318 -0.334295 0 -0.015841 0.008763 1.24736</acceleration>
+          <wrench>7.75907 -2.00577 3e-06 0 -0 0</wrench>
         </link>
       </model>
       <model name='robot_3'>
-        <pose>-0 30 -0 0 -0 -1.5708</pose>
+        <pose>-2.33847 -33.0484 0.002033 9e-06 -0.18471 -0.676771</pose>
         <scale>1 1 1</scale>
         <link name='base_footprint'>
-          <pose>-0 30 -0 0 -0 -1.5708</pose>
-          <velocity>-0 -0 0 0 -0 0</velocity>
-          <acceleration>-0 -0 0 1e-06 -0 0</acceleration>
-          <wrench>-0 -0 3e-06 0 -0 0</wrench>
+          <pose>-2.33847 -33.0484 0.002033 9e-06 -0.18471 -0.676771</pose>
+          <velocity>1.23995 0.008611 0.009974 -0.00866 -0.010744 -0.001266</velocity>
+          <acceleration>-320.506 1261.24 10.9975 2.15222 -1.41278 -2.34638</acceleration>
+          <wrench>-1923.04 7567.46 65.9852 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_box'>
-        <pose>12.7444 -11.9233 0.5 0 -0 0</pose>
+        <pose>9.90568 -9.68436 0.5 -0 -0 -0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>12.7444 -11.9233 0.5 0 -0 0</pose>
+          <pose>9.90568 -9.68436 0.5 -0 -0 -0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
           <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
@@ -1199,7 +1199,7 @@
       </light>
     </state>
     <model name='unit_box'>
-      <pose>0.170097 0.08151 0.5 0 -0 0</pose>
+      <pose>9.90568 -9.68436 0.5 0 -0 0</pose>
       <link name='link'>
         <inertial>
           <mass>1</mass>
