@@ -1,8 +1,5 @@
 # Mission_coordination_project
 
-Connect to [RDS](https://app.theconstructsim.com/#/) with your logins.
-
-Go to "My rosjects" and run the project that you created.
 
 ## Step 4: Move one robot to the corresponding flag
 
@@ -59,6 +56,6 @@ video: https://drive.google.com/file/d/1g_R3snpDz9QrXWknSiSHSsTD89WLrsih/view?us
 
 ## Bonus
 
-For the source code and description, see another branch.
+For the source code and description, see the branch "bonus".
 
-video: https://drive.google.com/file/d/1JyWD92i0nWth7-p0ABjDmh4ecLbaXTf_/view?usp=sharing
+video: https://drive.google.com/file/d/1z_VBmK_QmwFCuUbXjQTUMrx7NBCIQDxr/view?usp=sharing
