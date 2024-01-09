@@ -16,3 +16,6 @@ In another terminal
 ```bash
 roslaunch evry_project_strategy bonus.launch
 ```
+
+videolink:
+https://drive.google.com/file/d/1z_VBmK_QmwFCuUbXjQTUMrx7NBCIQDxr/view?usp=sharing

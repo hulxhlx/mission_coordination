@@ -120,17 +120,17 @@ def run_demo():
     robot_name = rospy.get_param("~robot_name")
     robot = Robot(robot_name)
     print(f"Robot : {robot_name} is starting..")
-    rospy.sleep(15*int(robot_name[-1]))
+    rospy.sleep(20*int(robot_name[-1]))
     #if int(robot_name[-1])==1:
-    velocity = 1
-    angle = 1
-
+    velocity = 0
+    angle = 0
+    distance_thershold = 3
     # Timing
 
     while not rospy.is_shutdown():
         # Strategy
         distancelist =robot.getDistanceToFlag()
-        
+
 
         distancex = float(distancelist[0])
         distancey = float(distancelist[1])
@@ -152,10 +152,21 @@ def run_demo():
         Kp_dist = 1
         Kp_theta = 1
 
-        if(distanceo< 6 ):
-            velocity = 2
-            angle = 3.14/10
-            rospy.sleep(0.04)
+        Ki_dist = 1
+        Ki_theta = 1
+
+        if(distanceo< distance_thershold ):
+            robot.set_speed_angle(0, 0)
+            rospy.sleep(1)
+             # Obstacles detected, change direction
+            robot.set_speed_angle(0, 3.14/4)
+            rospy.sleep(1)
+            robot.set_speed_angle(1, 0)# Keep moving with this direction
+            rospy.sleep(3)
+            robot.set_speed_angle(0, -3.14/4)
+            rospy.sleep(1)
+            robot.set_speed_angle(1, 0)# Keep moving with this direction
+            rospy.sleep(3)
 
         else:
             velocity = Kp_dist*err_dist

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <arg name="nbr_robot" default="3"/>
-  <arg name="env" default="lev2"/>
+  <arg name="env" default="lev1"/>
 
   <param name="/use_sim_time" value="true" />
 
